@@ -20,6 +20,7 @@
 
 - [項目簡介 / Introduction](#項目簡介--introduction)
 - [核心特色 / Core Features](#核心特色--core-features)
+- [基準測試快照 / Benchmark Snapshot](#基準測試快照--benchmark-snapshot)
 - [功能清單 / Feature List](#功能清單--feature-list)
 - [快速開始 / Quick Start](#快速開始--quick-start)
 - [架構設計 / Architecture](#架構設計--architecture)
@@ -49,6 +50,31 @@
 
 - **開源友好 / Open Source Friendly**：MIT 許可證，歡迎社區貢獻  
   MIT License, community contributions welcome
+
+---
+
+## 📊 基準測試快照 / Benchmark Snapshot
+
+> Last updated: 2026-02-17 (local runs)
+
+### 測試條件 / Test Setup
+
+- Dataset: `locomo_all`
+- Stages: `add + search + answer + evaluate`
+- Smoke mode: `10 conversations`, `100 messages / conv`, `3 questions / conv` (total `30` Q)
+- Judge: `LLM Judge`
+
+### 近期結果 / Recent Results
+
+| System | Accuracy | Search Latency (mean) | Notes |
+|---|---:|---:|---|
+| AtlasCompareReal(neuro) | 86.67% (best run observed: 92.22%) | ~8-10 ms | Current primary path |
+| EverMemOS (`evermemos_openai`) | 60.00% | N/A in this run | `locomo_all-evermemos_openai`, Judge=`gpt-4o-mini`, 30Q smoke |
+
+### 說明 / Notes
+
+- `30` 題樣本容易波動，建議至少跑 `2-3` 次再做對外結論。
+- 不同 Provider 混用時（LLM vs Embedding）請確認環境變量分離配置，避免評測偏差。
 
 ---
 
