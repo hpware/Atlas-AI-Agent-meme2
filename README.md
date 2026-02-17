@@ -21,6 +21,7 @@
 - [項目簡介 / Introduction](#項目簡介--introduction)
 - [核心特色 / Core Features](#核心特色--core-features)
 - [基準測試快照 / Benchmark Snapshot](#基準測試快照--benchmark-snapshot)
+- [因果引擎基準 / Causal Engine Benchmark](#因果引擎基準--causal-engine-benchmark)
 - [功能清單 / Feature List](#功能清單--feature-list)
 - [快速開始 / Quick Start](#快速開始--quick-start)
 - [架構設計 / Architecture](#架構設計--architecture)
@@ -77,6 +78,25 @@
   Small `30`-Q samples can vary; run at least `2-3` times before publishing conclusions.
 - 不同 Provider 混用時（LLM vs Embedding）請確認環境變量分離配置，避免評測偏差。  
   When mixing providers (LLM vs Embedding), keep environment variables separated to avoid benchmark skew.
+
+### 🧠 因果引擎基準 / Causal Engine Benchmark
+
+> Causal Engine = Atlas Engine v1.0
+
+- 支持 `N=100,000` 級別可達性計算（reachability）。  
+  Supports reachability computation at `N=100,000` scale.
+- 基準對比：Floyd-Warshall（O(N^3)）vs Atlas Engine v1.0。  
+  Baseline comparison: Floyd-Warshall (O(N^3)) vs Atlas Engine v1.0.
+
+| N（節點數 / Nodes） | Floyd-Warshall | Atlas Engine v1.0 | 狀態 / Status |
+|---:|---:|---:|---|
+| 100 | 0.324 s | 0.294 s | ✅ |
+| 1,000 | 41.280 s | 0.503 s | ✅ 82.02x |
+| 5,000 | Timeout @ 60 s | 11.854 s | ✅ 唯一可行 / only feasible |
+| 100,000 | 不可行 / infeasible | 可行 / feasible | ✅ 文明級 / civilization-scale |
+
+- 詳細環境與流程請見：`docs/PERFORMANCE_BASELINE.md`。  
+  For full environment and methodology, see `docs/PERFORMANCE_BASELINE.md`.
 
 ---
 
