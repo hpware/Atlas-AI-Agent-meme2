@@ -66,10 +66,10 @@
 
 ### 近期結果 / Recent Results
 
-| 系統 / System | 準確率 / Accuracy | 搜索延遲（平均）/ Search Latency (mean) | 備註 / Notes |
+| 系統 / System | 準確率 / Accuracy | 搜索延遲（mean / p95）/ Search Latency (mean / p95) | 備註 / Notes |
 |---|---:|---:|---|
-| AtlasCompareReal(neuro) | 86.67%（觀測最佳 / best observed: 92.22%） | ~8-10 ms | 目前主線配置 / Current primary path |
-| EverMemOS (`evermemos_openai`) | 60.00% | ~50 ms | `locomo_all-evermemos_openai`，Judge=`gpt-4o-mini`，30Q smoke |
+| AtlasCompareReal(neuro) | 三次最佳 / best 3 runs: 92.22% / 90.00% / 86.67% | 8.39-8.75 ms / 10.38-11.10 ms | 目前主線配置 / Current primary path |
+| EverMemOS (`evermemos_openai`) | 三次測試 / 3 runs: 80.00% / 66.67% / 60.00% | 18.37-34.04 ms / 25.76-51.14 ms | 僅統計正常測試；不含異常 run |
 
 ### 說明 / Notes
 
@@ -748,5 +748,6 @@ If this project helps you, please give us a Star ⭐!
 **Atlas AI Agent - Building the Most Powerful AI-Agent Framework**
 
 </div>
+
 
 
