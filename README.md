@@ -69,7 +69,7 @@
 | System | Accuracy | Search Latency (mean) | Notes |
 |---|---:|---:|---|
 | AtlasCompareReal(neuro) | 86.67% (best run observed: 92.22%) | ~8-10 ms | Current primary path |
-| EverMemOS (`evermemos_openai`) | 60.00% | N/A in this run | `locomo_all-evermemos_openai`, Judge=`gpt-4o-mini`, 30Q smoke |
+| EverMemOS (`evermemos_openai`) | 60.00% | ~50 ms | `locomo_all-evermemos_openai`, Judge=`gpt-4o-mini`, 30Q smoke |
 
 ### 說明 / Notes
 
@@ -746,3 +746,4 @@ If this project helps you, please give us a Star ⭐!
 **Atlas AI Agent - Building the Most Powerful AI-Agent Framework**
 
 </div>
+
