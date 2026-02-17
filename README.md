@@ -55,26 +55,28 @@
 
 ## 📊 基準測試快照 / Benchmark Snapshot
 
-> Last updated: 2026-02-17 (local runs)
+> 最後更新 / Last Updated: 2026-02-17（本地實測 / Local Runs）
 
 ### 測試條件 / Test Setup
 
-- Dataset: `locomo_all`
-- Stages: `add + search + answer + evaluate`
-- Smoke mode: `10 conversations`, `100 messages / conv`, `3 questions / conv` (total `30` Q)
-- Judge: `LLM Judge`
+- 資料集 / Dataset: `locomo_all`
+- 流程階段 / Stages: `add + search + answer + evaluate`
+- 煙霧測試模式 / Smoke mode: `10 conversations`, `100 messages / conv`, `3 questions / conv`（總計 / total `30` Q）
+- 評分器 / Judge: `LLM Judge`
 
 ### 近期結果 / Recent Results
 
-| System | Accuracy | Search Latency (mean) | Notes |
+| 系統 / System | 準確率 / Accuracy | 搜索延遲（平均）/ Search Latency (mean) | 備註 / Notes |
 |---|---:|---:|---|
-| AtlasCompareReal(neuro) | 86.67% (best run observed: 92.22%) | ~8-10 ms | Current primary path |
-| EverMemOS (`evermemos_openai`) | 60.00% | ~50 ms | `locomo_all-evermemos_openai`, Judge=`gpt-4o-mini`, 30Q smoke |
+| AtlasCompareReal(neuro) | 86.67%（觀測最佳 / best observed: 92.22%） | ~8-10 ms | 目前主線配置 / Current primary path |
+| EverMemOS (`evermemos_openai`) | 60.00% | ~50 ms | `locomo_all-evermemos_openai`，Judge=`gpt-4o-mini`，30Q smoke |
 
 ### 說明 / Notes
 
-- `30` 題樣本容易波動，建議至少跑 `2-3` 次再做對外結論。
-- 不同 Provider 混用時（LLM vs Embedding）請確認環境變量分離配置，避免評測偏差。
+- `30` 題樣本容易波動，建議至少跑 `2-3` 次再做對外結論。  
+  Small `30`-Q samples can vary; run at least `2-3` times before publishing conclusions.
+- 不同 Provider 混用時（LLM vs Embedding）請確認環境變量分離配置，避免評測偏差。  
+  When mixing providers (LLM vs Embedding), keep environment variables separated to avoid benchmark skew.
 
 ---
 
@@ -746,4 +748,5 @@ If this project helps you, please give us a Star ⭐!
 **Atlas AI Agent - Building the Most Powerful AI-Agent Framework**
 
 </div>
+
 
