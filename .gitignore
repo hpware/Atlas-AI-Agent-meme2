@@ -1,0 +1,4 @@
+# 测试脚本（可能包含敏感信息）
+test_*.ps1
+FIX_COMPILE_ERROR.md
+README_TESTING.md
